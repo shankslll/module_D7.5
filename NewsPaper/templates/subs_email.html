@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Здравствуйте, {{usr.username}}. Новая статья в твоём любимом разделе
+        {% for c in post.postCategory.all %}
+            {{ c.name }}!</h2>
+        {% endfor %}
+    <h4>{{ post.name }}</h4>
+    <p>{{ post.news_text|truncatechars:50 }}</p>
+    <a href="{{ full_url }}{{ post.get_absolute_url }}">Читать полностью</a>
+</body>
+</html>
